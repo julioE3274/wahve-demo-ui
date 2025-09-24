@@ -39,7 +39,7 @@
 
 <section class="h-screen flex flex-col justify-between">
   <div>
-    <h1 class="text-2xl font-bold mb-6">Trait Ranking Demo</h1>
+    <h1 class="text-2xl font-bold mb-6 mx-2">Trait Ranking Demo</h1>
 
     <p class="mx-7">
       Sort these traits, with the top one being the most important.
@@ -57,7 +57,14 @@
     </div>
 
     <div class="mt-6 p-4 bg-gray-100 rounded">
-      <h2 class="font-semibold">Ranked values: {submitting ? 'loading' : ''}</h2>
+      <h2 class="font-semibold flex-row flex align-middle items-center">
+        Ranked values:
+        {#if submitting}
+          <div
+            class="ml-3 w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"
+          ></div>
+        {/if}
+      </h2>
       <p>{ranking.join(" → ")}</p>
       {#if score !== undefined && score !== null && typeof score === "number"}
         <p class="text-[20px] font-bold">Scored: {score}</p>
