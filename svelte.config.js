@@ -7,7 +7,7 @@ const config = {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: 'index.html' // optional, for SPA routing
+      fallback: 'index.html' // <--- this ensures SPA routing works
     })
   }
 };
